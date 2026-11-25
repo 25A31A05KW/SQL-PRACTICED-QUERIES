@@ -1,0 +1,72 @@
+SELECT COUNT(*) AS total_cols
+FROM employees
+
+SELECT COUNT(employee_id) AS total_ids
+FROM employees
+
+SELECT COUNT(employee_name) AS total_names
+FROM employees
+
+SELECT COUNT(department) AS total_dept
+FROM employees
+
+SELECT COUNT(age) AS total_ages
+FROM employees
+
+SELECT SUM(employee_id) AS id_sum
+FROM employees
+
+SELECT SUM(salary) AS total_salary
+FROM employees
+
+SELECT SUM(bonus) AS total_bonus
+FROM employees
+
+SELECT AVG(salary) AS avg_salary
+FROM employees
+
+SELECT MAX(salary) AS max_salary,
+MIN(salary) AS min_salary
+FROM employees
+
+SELECT MAX(bonus) AS max_bonus,
+MIN(bonus) AS min_bonus
+FROM employees
+
+SELECT bonus
+FROM employees
+
+SELECT DISTINCT bonus
+FROM employees
+
+SELECT SUM(salary)
+FROM employees
+WHERE department = 'IT' AND salary != 60000
+
+SELECT *
+FROM employees
+ORDER BY department DESC
+
+SELECT department, COUNT(employee_id) AS individual
+FROM employees
+GROUP BY department
+
+SELECT department, SUM(salary) AS individual_salary
+FROM employees
+GROUP BY department
+
+SELECT department,MAX(bonus) AS max_bonus
+FROM employees
+GROUP BY department
+
+SELECT AVG(salary) AS avg_by_age
+FROM employees
+GROUP BY age
+
+SELECT department,city, COUNT(employee_id) AS employee_count
+FROM employees
+GROUP BY department,city
+
+SELECT department,city, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department,city
